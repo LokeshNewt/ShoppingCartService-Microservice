@@ -1,0 +1,13 @@
+package com.newt.repository;
+
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+import com.newt.model.ShoppingCartItems;
+
+@Repository
+public interface ShoppingCartItemsRepository extends CrudRepository<ShoppingCartItems,String>{
+
+	public ShoppingCartItems findByShoppingCartItemsId(int shoppingCartID);
+
+}

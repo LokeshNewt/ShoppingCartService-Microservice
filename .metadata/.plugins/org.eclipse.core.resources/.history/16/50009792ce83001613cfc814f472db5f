@@ -1,0 +1,16 @@
+package com.newt.repository;
+
+
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+import com.newt.model.ShoppingCart;
+
+@Repository
+public interface ShoppingCartRepository extends CrudRepository<ShoppingCart, Integer> {
+
+	public ShoppingCart findByCustomerId(int customerId);
+	//@Query(value="SELECT customer.customer_id, shopping_cart.shopping_cart_id FROM customer INNER JOIN shopping_cart ON customer.customer_id=shopping_cart.customer_id ORDER BY customer.customer_id")
+
+	// private void findByCustomerId(int customer_id);
+}
